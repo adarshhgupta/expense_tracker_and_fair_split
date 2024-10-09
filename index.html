@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker with Group Payments</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Group Expense Tracker</h1>
+        <p>Keep track of shared expenses, including third-party payments, among friends.</p>
+
+        <!-- Friends Input Section -->
+        <div class="input-section">
+            <h2>Enter Number of Friends</h2>
+            <label for="numFriends">Number of Friends</label>
+            <input type="number" id="numFriends" placeholder="Enter number of friends" min="1"/>
+            <button id="setFriends" class="button-primary">Set Friends</button>
+        </div>
+
+        <!-- Transaction Input Section -->
+        <div id="transactionSection" style="display: none;">
+            <h2>Add a Transaction</h2>
+            <label for="from">Who Paid?</label>
+            <input type="text" id="from" placeholder="Enter payer's name" />
+
+            <label for="to">Who Received? (Leave blank if paying a third-party)</label>
+            <input type="text" id="to" placeholder="Enter recipient's name or leave blank" />
+
+            <label for="amount">Amount</label>
+            <input type="number" id="amount" placeholder="Enter amount" />
+
+            <button id="addTransaction" class="button-primary">Add Transaction</button>
+        </div>
+
+        <!-- Settlements Section -->
+        <div class="settlements">
+            <h2>Current Balances</h2>
+            <ul id="balanceList"></ul>
+            <button id="settleExpenses" class="button-settle">Settle All Expenses</button>
+        </div>
+
+        <!-- Settlement Summary Section -->
+        <div class="settlement-summary">
+            <h2>Settlements</h2>
+            <ul id="settlementList"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
